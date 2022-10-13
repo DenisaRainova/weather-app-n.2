@@ -46,8 +46,13 @@ li {
   width: 64px;
 }
 
+.weather-temperature strong {
+  font-size: 30px;
+  top: 14px;
+}
+
 .weather-temperature .units {
   position: relative;
   font-size: 30px;
-  top: 14px;
+  top: 0px;
 }
