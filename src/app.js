@@ -47,7 +47,14 @@ function displayTemperature(response) {
 function search(city){
     let apiKey = "b884720d8f959cc5aa66ad10c2546f56";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lat={lat}&lon={lon}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(displayTemperature);
+    try {
+      axios.get(apiUrl).then(displayTemperature);
+    } catch (error) {
+      console.error(error);
+      // expected output: ReferenceError: nonExistentFunction is not defined
+      // Note - error messages will vary depending on browser
+    }
+
 }
 
 function handleSubmit(event){
