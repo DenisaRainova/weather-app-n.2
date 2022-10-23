@@ -22,7 +22,8 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Thu", "Fri", "Sat", "Sun"];
@@ -55,7 +56,7 @@ function displayForecast() {
 function getForecast(coordinates) {
   console.log(coordinates);
   
-  let apiKey = "b884720d8f959cc5aa66ad10c2546f56";
+  let apiKey = "f3887e262c88d1158f7e2ef4998e234c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
@@ -88,7 +89,7 @@ function displayTemperature(response) {
 }
 
 function search(city){
-    let apiKey = "b884720d8f959cc5aa66ad10c2546f56";
+    let apiKey = "f3887e262c88d1158f7e2ef4998e234c";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lat={lat}&lon={lon}&appid=${apiKey}&units=metric`;
     try {
       axios.get(apiUrl).then(displayTemperature);
